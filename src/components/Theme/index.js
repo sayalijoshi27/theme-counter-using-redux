@@ -2,6 +2,7 @@ import {connect} from "react-redux"
 import {CHANGE_THEME} from "../../redux/actionConstants/themeActions"
 
 const Theme = (props) => {
+    console.log("props.theme", props.theme)
     return (
         <div>
             <h1>Toggle Theme</h1>
@@ -10,6 +11,7 @@ const Theme = (props) => {
     )
 }
 const mapStateToProps = (state) => {
+    console.log("state :::::::::::", state.theme)
     return { theme: state.theme}
 }
 const mapDispatchToProps = (dispatch) => {

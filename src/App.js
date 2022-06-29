@@ -5,8 +5,9 @@ import Theme from './components/Theme';
 import { CHANGE_THEME } from './redux/actionConstants/themeActions';
 
 function App(props) {
+  console.log("props ==========", props.theme)
   return (
-    <div className={props.theme === true ? `dark-theme App` : `App`}>
+    <div className={!props.theme ? `dark-theme App` : `App`}>
       <div className='App-header'>
         <Theme />
         <Counter />
