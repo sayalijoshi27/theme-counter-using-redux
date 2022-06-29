@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import {INCREMENT, DECREMENT, INCREMENTBY5, INCREMENTBYUSERVALUE} from "../../redux/actionConstants/counterActions"
 
 const Counter = () => {
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState('')
   const count = useSelector((state) => state.count)
   const dispatch = useDispatch()
   return (
@@ -15,11 +15,10 @@ const Counter = () => {
         <h2>
           Increment by <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
         </h2>
-        <button onClick={(e) => dispatch({type: INCREMENTBYUSERVALUE, payload: value})}>Add</button>        
+        <button onClick={() => dispatch({type: INCREMENTBYUSERVALUE, payload: value, setValue})}>Add</button>        
+        
       </div>
   )
 }
-
-
 
 export default Counter
